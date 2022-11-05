@@ -17,7 +17,4 @@ ${SRC}/py-hfst-ospell_wrap.c ${SRC}/py_hfst_ospell.py : ${SRC}/py-hfst-ospell ${
 clean:
 	rm -f ${SRC}/*.o ${SRC}/*.so ${SRC}/py-hfst-ospell_wrap.* ${SRC}/py_hfst_ospell.py*
 
-test:
-	python setup.py test
-
-.PHONY: clean test
+.PHONY: clean

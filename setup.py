@@ -56,11 +56,5 @@ setup(
         'build_py': BuildPy,
     },
 
-    python_requires='>=3.7',
-    setup_requires=[
-        'pytest-runner',
-    ],
-    tests_require=[
-        'pytest'
-    ],
+    python_requires='>=3.7'
 )

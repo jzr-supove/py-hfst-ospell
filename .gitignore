@@ -174,3 +174,4 @@ tags
 
 src/py_hfst_ospell/py-hfst-ospell_wrap.c
 src/py_hfst_ospell/py_hfst_ospell.py
+tests/

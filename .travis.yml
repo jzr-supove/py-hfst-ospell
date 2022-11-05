@@ -14,7 +14,3 @@ addons:
 install:
   - python3.7 setup.py bdist_wheel
   - pip install dist/*.whl
-
-script:
-  - python3.7 setup.py test
-  - pip install -r requirements.txt && pytest
