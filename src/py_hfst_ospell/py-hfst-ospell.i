@@ -2,7 +2,6 @@
 
 %{
 #include "py-hfst-ospell.h"
-
 %}
 
 %include "stdint.i"

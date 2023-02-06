@@ -143,10 +143,13 @@ hfst_ospell::Transducer* createTransducer(std::string lex_path) {
 
 std::string lookup(hfst_ospell::Transducer* tr, std::string word) {
 	hfst_ospell::AnalysisQueue aq = tr->lookup(&word[0]);
-	if (aq.size() > 0){
-		return aq.top().first;
+	std::vector<std::string> results;
+	while (aq.size() > 0) {
+		const std::string& corr = aq.top().first;
+		results.push_back(corr.c_str());
+		aq.pop();
 	}
-	return "";
+	return results;
 }
 
 void lookup2(hfst_ospell::Transducer* tr, std::string word, std::string *OUTPUT) {
