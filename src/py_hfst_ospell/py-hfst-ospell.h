@@ -22,6 +22,6 @@ public:
 
 hfst_ospell::Transducer *createTransducer(std::string lex_path);
 
-std::string lookup(hfst_ospell::Transducer *tr, std::string word);
+std::vector<std::string> lookup(hfst_ospell::Transducer *tr, std::string word);
 
 void lookup2(hfst_ospell::Transducer* tr, std::string word, std::string *OUTPUT);
