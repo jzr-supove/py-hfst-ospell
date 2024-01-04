@@ -244,6 +244,9 @@ class Speller(object):
     def suggest(self, str):
         return _py_hfst_ospell.Speller_suggest(self, str)
 
+    def suggest_weighted(self, str):
+        return _py_hfst_ospell.Speller_suggest_weighted(self, str)
+    
     def lookup(self, word):
         return _py_hfst_ospell.Speller_lookup(self, word)
 

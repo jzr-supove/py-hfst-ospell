@@ -115,8 +115,19 @@ std::vector<std::string> Speller::suggest(const std::string str) {
 	return results;
 }
 
-hfst_ospell::CorrectionQueue Speller::suggest_weighted(const std::string str) {
-	return speller.suggest(str);
+std::vector<std::pair<std::string, float>> Speller::suggest_weighted(const std::string str) {
+	hfst_ospell::CorrectionQueue corrections = speller.suggest(str);
+	std::vector<std::pair<std::string, float>> results;
+	while (corrections.size() > 0) {
+		const auto& correction = corrections.top();
+		results.emplace_back(correction.first, correction.second);
+		corrections.pop();
+	}
+	return results;
+}
+
+void Speller::hello() {
+	printf("hello world");
 }
 
 std::string Speller::lookup(std::string word){
