@@ -115,6 +115,10 @@ std::vector<std::string> Speller::suggest(const std::string str) {
 	return results;
 }
 
+hfst_ospell::CorrectionQueue Speller::suggest_weighted(const std::string str) {
+	return speller.suggest(str);
+}
+
 std::string Speller::lookup(std::string word){
 	hfst_ospell::AnalysisQueue aq = lex->lookup(&word[0]);
 	if (aq.size() > 0){

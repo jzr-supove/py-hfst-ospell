@@ -14,6 +14,7 @@ public:
 
     bool spell(const std::string str);
     std::vector<std::string> suggest(const std::string str);
+	hfst_ospell::CorrectionQueue suggest_weighted(const std::string str);
     std::string lookup(std::string word);
     void set_beam(float beam);
     void set_weight_limit(float limit);
